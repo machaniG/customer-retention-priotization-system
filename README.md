@@ -1,11 +1,13 @@
-# Customer Retention Prioritization System
+# AI-Powered Customer Lifetime Value & Revenue-at-Risk Retention Platform | Python, SQL, PostgreSQL, LangChain, FastAPI, Streamlit
+
 
 In this project, I built a system that helps focus retention efforts on the customers most likely to leave and cost you money.
 
 
 ## Problem 
 
-With thousands of customers, how can we identify and prioritize those whose potential loss represents the greatest value at risk?
+- With thousands of customers who should we prioritize for retention? 
+- How can we identify and prioritize customers whose potential loss represents the highest value at risk?
 
 
 ## Solution
