@@ -25,7 +25,7 @@ Exposed functionality using FastAPI endpoints, built a Streamlit interface for n
 
 - The system ranks customers based on expected value loss (revenue at risk) and highlights who to contact first and highlights key insights about their purchasing behavior. 
 - Results are delivered through a simple user streamlit chatbot, making it easy for teams to act quickly without manual analysis. 
-- **It is designed to stay up to date as new data arrives (by simply provide new month's date to the prediction endpoint/button), allowing teams to easily refresh customer scores and keep retention efforts aligned with the latest behavior.**
+- **It is designed to stay up to date as new data arrives (by simply providing new month's date to the prediction endpoint/button), allowing teams to easily refresh customer scores and keep retention efforts aligned with the latest behavior.**
 - It can be adapted to different data environments as it needs miminal data preprocessing, allowing performance to scale with the quality and richness of available customer data.
 
 
