@@ -10,13 +10,23 @@ With thousands of customers, how can we identify and prioritize those whose pote
 
 ## Solution
 
-I built a retention prioritization system from scratch by training three Machine Learning models; churn risk classification, customer life value (CLV) estimation, and K-Means advanced behavioral segmentation, and combining their outputs into a unified customer profile stored in PostgreSQL database. I then created a calculated metric Estimated **Revenue-at-Risk** (churn probability x CLV) which is used to rank customers for retention prioritization. 
+I engineered customer-level features from transactional data, built and trained three machine learning models; churn risk classification, Customer Lifetime Value (CLV) estimation, and K-Means clustering for advanced behavioral segmentation.
 
-**System Performance:** targeting the **top 20% by estimated revenue-at-risk captured 52% of potential revenue loss** vs. 43% using CLV alone and 20% random targeting.
+Combined the outputs from the three models into one table, calculated **Estimated Revenue-at-Risk metric (RaR: churn probability x estimated CLV)**, and used the estimated RaR feature to rank customers for retention prioritization.
+
+Created a local PostgreSQL database where I stored processed customer features, combined models output, and relational metadata.
+
+**System Performance:** **targeting the top 20% by estimated revenue-at-risk captured 52% of potential revenue loss vs. 43% using CLV alone and 20% under random targeting.**
+
+Integrated a provider-agnostic tool-calling LLM agent layer with LangChain (OpenAI/Claude/Llama) non-technical teams to securely generate grounded customer-level explanations from model outputs and behavioral features.
+
+Exposed functionality using FastAPI endpoints, built a Streamlit interface for non-technical teams like retention managers to use and containerized for cloud deployment.
 
 
-The system ranks customers based on expected value loss (revenue at risk) and highlights who to contact first and highlights key insights about their purchasing behavior. 
-Results are delivered through a simple user streamlit chatbot, making it easy for teams to act quickly without manual analysis. It is designed to stay up to date as new data arrives (by simply provide new month's date to the prediction endpoint/button), allowing teams to easily refresh customer scores and keep retention efforts aligned with the latest behavior. It can be adapted to different data environments as it needs miminal data preprocessing, allowing performance to scale with the quality and richness of available customer data.
+- The system ranks customers based on expected value loss (revenue at risk) and highlights who to contact first and highlights key insights about their purchasing behavior. 
+- Results are delivered through a simple user streamlit chatbot, making it easy for teams to act quickly without manual analysis. 
+- **It is designed to stay up to date as new data arrives (by simply provide new month's date to the prediction endpoint/button), allowing teams to easily refresh customer scores and keep retention efforts aligned with the latest behavior.**
+- It can be adapted to different data environments as it needs miminal data preprocessing, allowing performance to scale with the quality and richness of available customer data.
 
 
 ## Impact (Evaluation)
